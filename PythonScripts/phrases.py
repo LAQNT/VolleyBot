@@ -46,7 +46,7 @@ ONLY_ADMINS = (
 )
 
 def welcome(userName):
-    return random.choice(WELCOME_PHRASES).format(userName=userName)
+    return f'{random.choice(WELCOME_PHRASES).format(userName=userName)}\n\nCheck the <a href="https://poloriva.github.io/VolleyBot/">Website</a> for information about the group'
 
 def goodbye(userName):
     return random.choice(GOODBYE_PHRASES).format(userName=userName)
