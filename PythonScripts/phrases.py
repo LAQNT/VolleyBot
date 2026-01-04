@@ -45,6 +45,12 @@ ONLY_ADMINS = (
     '''🔴 I'm sorry Dave, I'm afraid I can't do that''',
 )
 
+UNKNOWN_COMMAND = (
+    "Sorry, I don't know what you mean by that",
+    "I don't recognize that command",
+    "Excuse me, were you talking to me ? Because I don't know that command",
+)
+
 def welcome(userName):
     return f'{random.choice(WELCOME_PHRASES).format(userName=userName)}\n\nCheck the <a href="https://poloriva.github.io/VolleyBot/">Website</a> for information about the group'
 
@@ -71,3 +77,6 @@ def complaint():
 
 def onlyAdmins():
     return f'{random.choice(ONLY_ADMINS)}'
+
+def unknownCommand():
+    return f'{random.choice(UNKNOWN_COMMAND).format()}\nUse /help for a list of available commands.'

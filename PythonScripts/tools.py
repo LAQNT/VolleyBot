@@ -126,8 +126,8 @@ reload_parser = adminSubparsers.add_parser('/reload', help='Add new events (admi
 # ----------------------- Indian Takeaway Menu options ----------------------- #
 indianTakeawayMenuOptions = [
     'Pollo Kurma 🍗🥥🫚',
-    'Pollo Tikka Massala (Piccante) 🍗🥛🌶️',
-    'Pollo Tikka Massala (Dolce) 🍗🥛🥥',
+    'Pollo Tikka Massala Piccante 🍗🥛🌶️',
+    'Pollo Tikka Massala Dolce 🍗🥛🥥',
     'Pollo Makhoni 🍗🥭',
     'Pollo al Curry 🍗🍛',
     'Pollo Madras 🍗🌶️🍋',

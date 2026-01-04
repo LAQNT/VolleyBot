@@ -74,6 +74,7 @@
     <!-- Footer -->
     <footer class="text-center text-slate-400 text-sm mt-16 pb-8">
         <p>&copy; Built for the homies.</p>
+        <a href="javascript:void(0)" onclick="openModal('info', 'links')" class="text-slate-400 hover:text-indigo-500 transition-colors underline decoration-slate-300">Support Us</a>
     </footer>
 
     <!-- SHARED MODAL COMPONENT -->
@@ -123,7 +124,6 @@
                 description: 'The definitive guide on how to join the list and play.',
                 content: `
                     <h4 class="text-xl font-bold mb-4 border-b pb-2 text-slate-800">List 101: The Basics</h4>
-                    <!-- Emphasis section for key actions -->
                     <div class="space-y-4 mb-8 p-6 bg-indigo-50 border-l-4 border-indigo-500 rounded-r-lg">
                         <div class="flex items-center text-xl font-bold text-indigo-700">
                             <i data-lucide="list-checks" class="w-6 h-6 mr-3 flex-shrink-0"></i>
@@ -218,8 +218,7 @@
                 description: 'VolleyBot, how to use it and a few words from itself',
                 content: `
                     <img class="w-full h-auto max-w-lg" src="art/bot_profilePic_512.png" alt="picture of VolleyBot"></>
-                    <p class="text-center"><strong>VolleyBot</strong></p>
-                    <p>VolleyBot will manage the list from now on. No need to copy edit and paste any more. No race conflicts when multiple people are modifying the list. Everything will be done by VolleyBot.</p>
+                    <p><strong>VolleyBot</strong> will manage the list from now on. No need to copy edit and paste any more. No race conflicts when multiple people are modifying the list. Everything will be done by VolleyBot.</p>
                     <p><strong>Chat commands:</strong></p>
                     <div class="font-mono bg-gray-900 text-green-400 p-4 rounded-lg">
                         <div class="text-white"><span class="text-green-500">$</span>/addme</div>
@@ -261,149 +260,64 @@
                 `
             },
             {
-                id: 'links',
-                title: 'Support Us',
-                icon: 'hand-fist',
+                id: 'faq',
+                title: 'FAQ',
+                icon: 'message-circle-question-mark',
                 color: 'bg-white',
-                date: 'Helping us helps you',
-                description: 'It is a win-win-win scenario.',
+                date: 'What, When, How ?',
+                description: 'Everything we are too afraid to ask in the chat',
                 content: `
-                    <p>We do not profit from doing this. And while we do not accept tips, you can help us by using any of our referral links:</p>
-                    <div class="p-4 sm:p-8 bg-gray-50 dark:bg-gray-800">
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                                <i data-lucide="cloud-rain-wind" class="w-5 h-5 text-indigo-500"></i>
+                                What about bad weather?
+                            </h4>
+                            <p class="text-slate-600 mt-2 ml-7">
+                                Rain doesn't stop us—the courts are indoor and heated! Unless there's a major weather alert or blizzard, the game is on. You can check the Telegram chat 2 hours before we start just to be sure.
+                            </p>
+                        </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                                <i data-lucide="credit-card" class="w-5 h-5 text-indigo-500"></i>
+                                How do I pay?
+                            </h4>
+                            <p class="text-slate-600 mt-2 ml-7">
+                                Instructions on who to pay are usually sent out before the match. You can also find the payment details (Satispay/Revolut links) in the group description at any time.
+                            </p>
+                        </div>
 
-                            <a href="https://americanexpress.com/it-it/referral/gold-credit?ref=pAOLORohv1&XL=MNTNS"
-                            target="_blank"
-                            class="flex items-center justify-center space-x-2 w-full
-                            text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
-                            text-base font-medium text-gray-700 bg-white hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-                            transition ease-in-out duration-150">
-                                <img height="32" width="32" src="https://cdn.simpleicons.org/americanexpress/006fcf"/>
-                                <span>American Express</span>
-                            </a>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                                <i data-lucide="heart-crack" class="w-5 h-5 text-indigo-500"></i>
+                                I confirmed, can I cancel if my friend is stuck on the backup list?
+                            </h4>
+                            <p class="text-slate-600 mt-2 ml-7">
+                                Confirmation is a commitment to the field booking. You can only cancel without penalty if there is another confirmed player ready to take your place. If the waitlist is active, just remove yourself and the bot will handle the swap.
+                            </p>
+                        </div>
 
-                            <a href="https://revolut.com/referral/?referral-code=paolof9qi4!DEC1-25-AR-L1&geo-redirect"
-                            target="_blank"
-                            class="flex items-center justify-center space-x-2 w-full
-                            text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
-                            text-base font-medium text-gray-700 bg-white hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-                            transition ease-in-out duration-150">
-                                <img height="32" width="32" src="https://cdn.simpleicons.org/revolut/191C1F"/>
-                                <span>Revolut</span>
-                            </a>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                                <i data-lucide="rose" class="w-5 h-5 text-indigo-500"></i>
+                                Who is that cutie in the Remembrance pic?
+                            </h4>
+                            <p class="text-slate-600 mt-2 ml-7">
+                                It says it right there! That’s the one and only <strong>Leonardo Gongora</strong>, the legend who started it all.
+                            </p>
+                        </div>
 
-                            <a href="https://wise.com/invite/ahpc/paolor216"
-                            target="_blank"
-                            class="flex items-center justify-center space-x-2 w-full
-                            text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
-                            text-base font-medium text-gray-700 bg-white hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-                            transition ease-in-out duration-150">
-                                <img height="32" width="32" src="https://cdn.simpleicons.org/wise/9FE870"/>
-                                <span>Wise</span>
-                            </a>
-
-                            <a href="https://n26.com/r/paolofrr7528"
-                            target="_blank"
-                            class="flex items-center justify-center space-x-2 w-full
-                            text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
-                            text-base font-medium text-gray-700 bg-white hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-                            transition ease-in-out duration-150">
-                                <img height="32" width="32" src="https://cdn.simpleicons.org/n26/48AC98"/>
-                                <span>N26</span>
-                            </a>
-
-                            <a href="https://coinbase.com/join/Y8VSCJE?src=android-link"
-                            target="_blank"
-                            class="flex items-center justify-center space-x-2 w-full
-                            text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
-                            text-base font-medium text-gray-700 bg-white hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-                            transition ease-in-out duration-150">
-                                <img height="32" width="32" src="https://cdn.simpleicons.org/coinbase/0052FF"/>
-                                <span>Coinbase</span>
-                            </a>
-
-                            <a href="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_00ORVKT7CF"
-                            target="_blank"
-                            class="flex items-center justify-center space-x-2 w-full
-                            text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
-                            text-base font-medium text-gray-700 bg-white hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-                            transition ease-in-out duration-150">
-                                <img height="32" width="32" src="https://cdn.simpleicons.org/binance/F0B90B"/>
-                                <span>Binance</span>
-                            </a>
-
-                            <a href="https://web.satispay.com/promocode/f5feb0e8-9bbd-471a-9e7e-1dcef5df7917"
-                            target="_blank"
-                            class="flex items-center justify-center space-x-2 w-full
-                            text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
-                            text-base font-medium text-gray-700 bg-white hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-                            transition ease-in-out duration-150">
-                                <i data-lucide="circle-question-mark" class="text-red-400"></i>
-                                <span>Satispay</span>
-                            </a>
-
-                            <a href="https://octopusenergy.it/octo-friends/polite-timber-22"
-                            target="_blank"
-                            class="flex items-center justify-center space-x-2 w-full
-                            text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
-                            text-base font-medium text-gray-700 bg-white hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-                            transition ease-in-out duration-150">
-                                <img height="32" width="32" src="https://cdn.simpleicons.org/octopusdeploy/ff48d3"/>
-                                <span>Octopus Energy</span>
-                            </a>
-
-                            <a href="https://m.do.co/c/961645fb8359"
-                            target="_blank"
-                            class="flex items-center justify-center space-x-2 w-full
-                            text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
-                            text-base font-medium text-gray-700 bg-white hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-                            transition ease-in-out duration-150">
-                                <img height="32" width="32" src="https://cdn.simpleicons.org/digitalocean/0080FF"/>
-                                <span>DigitalOcean</span>
-                            </a>
-
-                            <a href="https://budgetgamer.net/us/home"
-                            target="_blank"
-                            class="flex items-center justify-center space-x-2 w-full
-                            text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
-                            text-base font-medium text-gray-700 bg-white hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-                            transition ease-in-out duration-150">
-                                <img height="32" width="32" src="art/BG_logo.svg"/>
-                                <span>BudgetGamer</span>
-                            </a>
-
-                            <a href="https://share.global66.com/PAORIV673"
-                            target="_blank"
-                            class="flex items-center justify-center space-x-2 w-full
-                            text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
-                            text-base font-medium text-gray-700 bg-white hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-                            transition ease-in-out duration-150">
-                                <i data-lucide="circle-question-mark" class="text-indigo-600"></i>
-                                <span>Global66</span>
-
-                            <a href="https://ibkr.com/referral/paolo559"
-                            target="_blank"
-                            class="flex items-center justify-center space-x-2 w-full
-                            text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
-                            text-base font-medium text-gray-700 bg-white hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-                            transition ease-in-out duration-150">
-                                <i data-lucide="chart-candlestick" class="text-red-700"></i>
-                                <span>Interactive Brokers</span>
-                            </a>
-
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                                <i data-lucide="chef-hat" class="w-5 h-5 text-indigo-500"></i>
+                                What is the best dish at the Indian place?
+                            </h4>
+                            <p class="text-slate-600 mt-2 ml-7">
+                                First time? Go for the <strong>Pollo Tikka Masala Dolce</strong> or the <strong>Pollo Makhani</strong>. They are best paired with the <strong>Riso al limone</strong>!
+                                <br>
+                                Ask Andres for more info
+                            </p>
                         </div>
                     </div>
                 `
@@ -465,11 +379,158 @@
                     </div>
                     </div>
 
-                    <p>For transparency, the whole project is open source, just check the <a href="https://github.com/PoloRiva/VolleyBot" class="text-blue-600 hover:text-blue-800 font-semibold border-b-2 border-blue-600/50 hover:border-blue-800 transition duration-300 ease-in-out" target="_blank">repository</a>.</p>
+                    <p>For transparency, the whole project is open source, just check the github <a href="https://github.com/PoloRiva/VolleyBot" class="text-blue-600 hover:text-blue-800 font-semibold border-b-2 border-blue-600/50 hover:border-blue-800 transition duration-300 ease-in-out" target="_blank">repository</a>.</p>
                     <p>Please help us check everybody else has migrated to the new group chat.</p>
                 `
             }
         ];
+
+        const supportModalData = {
+            id: 'links',
+            title: 'Support Us',
+            date: 'Helping us helps you',
+            description: 'It is a win-win-win scenario (^_~)',
+            content: `
+                <p>We do not profit from doing this. And while we do not accept tips, you can help us by using any of our referral links:</p>
+                <div class="p-4 sm:p-8 bg-gray-50 dark:bg-gray-800">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+
+                        <a href="https://americanexpress.com/it-it/referral/gold-credit?ref=pAOLORohv1&XL=MNTNS"
+                        target="_blank"
+                        class="flex items-center justify-center space-x-2 w-full
+                        text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
+                        text-base font-medium text-gray-700 bg-white hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+                        transition ease-in-out duration-150">
+                            <img height="32" width="32" src="https://cdn.simpleicons.org/americanexpress/006fcf"/>
+                            <span>American Express</span>
+                        </a>
+
+                        <a href="https://revolut.com/referral/?referral-code=paolof9qi4!DEC1-25-AR-L1&geo-redirect"
+                        target="_blank"
+                        class="flex items-center justify-center space-x-2 w-full
+                        text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
+                        text-base font-medium text-gray-700 bg-white hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+                        transition ease-in-out duration-150">
+                            <img height="32" width="32" src="https://cdn.simpleicons.org/revolut/191C1F"/>
+                            <span>Revolut</span>
+                        </a>
+
+                        <a href="https://wise.com/invite/ahpc/paolor216"
+                        target="_blank"
+                        class="flex items-center justify-center space-x-2 w-full
+                        text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
+                        text-base font-medium text-gray-700 bg-white hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+                        transition ease-in-out duration-150">
+                            <img height="32" width="32" src="https://cdn.simpleicons.org/wise/9FE870"/>
+                            <span>Wise</span>
+                        </a>
+
+                        <a href="https://n26.com/r/paolofrr7528"
+                        target="_blank"
+                        class="flex items-center justify-center space-x-2 w-full
+                        text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
+                        text-base font-medium text-gray-700 bg-white hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+                        transition ease-in-out duration-150">
+                            <img height="32" width="32" src="https://cdn.simpleicons.org/n26/48AC98"/>
+                            <span>N26</span>
+                        </a>
+
+                        <a href="https://coinbase.com/join/Y8VSCJE?src=android-link"
+                        target="_blank"
+                        class="flex items-center justify-center space-x-2 w-full
+                        text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
+                        text-base font-medium text-gray-700 bg-white hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+                        transition ease-in-out duration-150">
+                            <img height="32" width="32" src="https://cdn.simpleicons.org/coinbase/0052FF"/>
+                            <span>Coinbase</span>
+                        </a>
+
+                        <a href="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_00ORVKT7CF"
+                        target="_blank"
+                        class="flex items-center justify-center space-x-2 w-full
+                        text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
+                        text-base font-medium text-gray-700 bg-white hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+                        transition ease-in-out duration-150">
+                            <img height="32" width="32" src="https://cdn.simpleicons.org/binance/F0B90B"/>
+                            <span>Binance</span>
+                        </a>
+
+                        <a href="https://web.satispay.com/promocode/f5feb0e8-9bbd-471a-9e7e-1dcef5df7917"
+                        target="_blank"
+                        class="flex items-center justify-center space-x-2 w-full
+                        text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
+                        text-base font-medium text-gray-700 bg-white hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+                        transition ease-in-out duration-150">
+                            <i data-lucide="circle-question-mark" class="text-red-400"></i>
+                            <span>Satispay</span>
+                        </a>
+
+                        <a href="https://octopusenergy.it/octo-friends/polite-timber-22"
+                        target="_blank"
+                        class="flex items-center justify-center space-x-2 w-full
+                        text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
+                        text-base font-medium text-gray-700 bg-white hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+                        transition ease-in-out duration-150">
+                            <img height="32" width="32" src="https://cdn.simpleicons.org/octopusdeploy/ff48d3"/>
+                            <span>Octopus Energy</span>
+                        </a>
+
+                        <a href="https://m.do.co/c/961645fb8359"
+                        target="_blank"
+                        class="flex items-center justify-center space-x-2 w-full
+                        text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
+                        text-base font-medium text-gray-700 bg-white hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+                        transition ease-in-out duration-150">
+                            <img height="32" width="32" src="https://cdn.simpleicons.org/digitalocean/0080FF"/>
+                            <span>DigitalOcean</span>
+                        </a>
+
+                        <a href="https://budgetgamer.net/us/home"
+                        target="_blank"
+                        class="flex items-center justify-center space-x-2 w-full
+                        text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
+                        text-base font-medium text-gray-700 bg-white hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+                        transition ease-in-out duration-150">
+                            <img height="32" width="32" src="art/BG_logo.svg"/>
+                            <span>BudgetGamer</span>
+                        </a>
+
+                        <a href="https://share.global66.com/PAORIV673"
+                        target="_blank"
+                        class="flex items-center justify-center space-x-2 w-full
+                        text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
+                        text-base font-medium text-gray-700 bg-white hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+                        transition ease-in-out duration-150">
+                            <i data-lucide="circle-question-mark" class="text-indigo-600"></i>
+                            <span>Global66</span>
+
+                        <a href="https://ibkr.com/referral/paolo559"
+                        target="_blank"
+                        class="flex items-center justify-center space-x-2 w-full
+                        text-center py-3 px-6 border border-gray-300 rounded-lg shadow-sm
+                        text-base font-medium text-gray-700 bg-white hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+                        transition ease-in-out duration-150">
+                            <i data-lucide="chart-candlestick" class="text-red-700"></i>
+                            <span>Interactive Brokers</span>
+                        </a>
+
+                    </div>
+                </div>
+            `
+        };
 
         // --- RENDER LOGIC ---
 
@@ -514,9 +575,10 @@
         function openModal(type, id) {
             let data;
 
-            // Find data based on type
-            if(type === 'info') {
-                data = infoButtons.find(i => i.id === id);
+            if (id === 'links') {
+                data = supportModalData;
+            } else if (type === 'info') {
+                data = infoButtons.find(b => b.id === id);
             } else {
                 data = newsItems.find(n => n.id === id);
             }

@@ -399,7 +399,7 @@ async def parseBotCommand(update: Update, context: ContextTypes.DEFAULT_TYPE, ms
             await sendBotMsg(context.application.bot, generateBotHelp())
 
         else:
-            await sendBotMsg(context.application.bot, 'Unknown command. Use /help for a list of available commands.')
+            await sendBotMsg(context.application.bot, phrases.unknownCommand())
 
     except CommandNotValid as e:
         await sendBotMsg(context.application.bot, e.response)
@@ -408,7 +408,7 @@ async def parseBotCommand(update: Update, context: ContextTypes.DEFAULT_TYPE, ms
         if args_list[0] in COMMANDS_MAP:
             await sendBotMsg(context.application.bot, f'Your command format is wrong\n{generateBotHelp(args_list[0])}')
         else:
-            await sendBotMsg(context.application.bot, 'Unknown command. Use /help for a list of available commands.')
+            await sendBotMsg(context.application.bot, phrases.unknownCommand())
 
 async def handlerBeachVolleyCommands(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ''' This function will be called for every text message in the specified topic '''
